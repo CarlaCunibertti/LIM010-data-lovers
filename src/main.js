@@ -1,39 +1,39 @@
 /* Manejo del DOM */
-const loginBox = document.getElementById('login-box');
-const btnLogin = document.getElementById('btnlogin');
-const pokemonCardDiv = document.getElementById("pokemon-card");
+const loginVista = document.getElementById('login-box');
+const pokemonVista =document.getElementById('pokemon-vista');
+const btnLogin= document.getElementById('btnlogin');
+const contenedor = document.getElementById("contenedor");
+const pokeData = POKEMON.pokemon;
+const name = document.getElementById("name");
 
 btnLogin.addEventListener('click', () => {
-  const userValue = document.getElementById('username').value;
-  const passwordValue = document.getElementById('password').value;
-  if (userValue === 'c' && passwordValue === '1') {
-    loginBox.classList.add('hide');
-    pokemonCardDiv.classList.remove('hide');
-  } else {
-    document.getElementById('result1').innerHTML = "Contraseña errada,intentelo nuevamente";
-  }
+    const userValue = document.getElementById('username').value;
+    const passwordValue = document.getElementById('password').value;
+    if (userValue === 'c' && passwordValue === '1') {
+        loginVista.classList.add('hide');
+        pokemonVista.classList.remove('hide');
+    }
+    else { 
+        document.getElementById('result1').innerHTML = "Contraseña errada,intentelo nuevamente";
+     }
 });
-/* Manejo del DOM */
 
-const arrayDeObjPokemon = POKEMON.pokemon; //Obtengo array de objetos, c/objeto representa un pokemon
-console.log(arrayDeObjPokemon);
-//obten c/uno de los elementos dentro del array.
+const mostrarPoker = (data) => {
 
-dataInfo(arrayDeObjPokemon)
-// [{},{img,name,height,id,egg},{}]
-//console.log(dataInfo(arrayDeObjPokemon));//[{},{img,name,height,id,egg}]
+  let mostrar = '';
 
+  for(let i = 0; i< data.length; i++){
 
-const newArrayObjPokemonWith9Keys = dataInfo(arrayDeObjPokemon); //[{},{},{}]
+      let llamado = `
+      <div>
+         <img src ="${data[i].img}"/>
+         <p>Nombre : ${data[i].name}</p>
+      </div>`;
+      
+      mostrar+= llamado;
+ }
+ return mostrar;
 
-for (let i = 0; i < newArrayObjPokemonWith9Keys.length; i++) {
-newArrayObjPokemonWith9Keys[i]; //{img,name,height,id,egg}
-pokemonCardDiv.innerHTML += `<div class="pokemon-card-style">
-
-<img id="pokemon-img" src="${newArrayObjPokemonWith9Keys[i].img}"alt=""> 
-
-</div>`;
 };
-//hacer un dropdown en html que imprima
-
+contenedor.innerHTML = mostrarPoker(pokeData);
 
