@@ -2,17 +2,21 @@
 
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
-const dataPoker = (data) => {
-  let arrayPoke = [];
-  for (let i =0; i< data.length; i++){
-     arrayPoke.push({
-      nombre : data[i].name,
-      imagen : data[i].img, 
+const dataPoker = (pokeData) => {
+  let newArrayPoke = [];
+  for (let i =0; i< pokeData.length; i++){
+    
+      newArrayPoke.push({
+      nombre : pokeData[i].name,
+      imagen :pokeData[i].img,
+      multipliers : pokeData[i].multipliers, 
+
     }); 
     }
-    return arrayPoke;
+    return newArrayPoke;
 };
 
 window.pokemon = {
   dataPoker: dataPoker, 
 };
+

@@ -20,22 +20,51 @@ btnLogin.addEventListener('click', () => {
      }
 });
 
-const mostrarPoker = (data) => {
+const mostrarPoker = (pokeData) => {
 
   let mostrar = '';
 
-  for(let i = 0; i< data.length; i++){
-
+  for(let i = 0; i< pokeData.length; i++){
+    if (pokeData[i].multipliers === null) {
+        pokeData[i].multipliers = 0;
+    } else {
+      pokeData[i].multipliers  
+    }
       let llamado = `
       <div>
-         <img src ="${data[i].img}"/>
-         <p>Nombre : ${data[i].name}</p>
+         <img src ="${pokeData[i].img}"/>
+         <p>Nombre : ${pokeData[i].name}</p>
+         <p>Atrapados : ${pokeData[i].multipliers}</p>
+         
       </div>`;
       
       mostrar+= llamado;
  }
+ 
  return mostrar;
 
 };
 contenedor.innerHTML = mostrarPoker(pokeData);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
