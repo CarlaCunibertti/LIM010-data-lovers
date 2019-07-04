@@ -1,8 +1,11 @@
+body{
+  background-color:  #a8ff78;
+  background: -webkit-linear-gradient(to right, #a8ff78, #78ffd6); 
+  background: linear-gradient(to right, #a8ff78, #78ffd6);
+}
 #view-back{
   background-size: cover;
-  display: flex;
   justify-content: center;
-  background-image: url(./img/pokemonfondonew.jpeg);
   height: 100vh;
   align-items: center;
 }
@@ -14,6 +17,11 @@ display:flex;
 justify-content: center;
 border-radius: 8px;
 font-family: 'Acme', sans-serif;
+position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
 }
 .items-login{
 height: 10px;
@@ -88,7 +96,7 @@ margin:0 auto;
 }
 #contenedor{
   padding: 0;
-  margin:150px;
+  margin:50px;
   list-style: none;
   display: -webkit-box;
   display: -moz-box;
@@ -100,12 +108,27 @@ margin:0 auto;
 }
 .nav-menu{
 text-decoration: none;
-margin-left: 21%;
+margin-left: 16%;
 margin-top: 2.5%;
-font-size: xx-large;
+font-size: x-large;
 font-weight: bold;
 display: inline-block;
 color: royalblue;
-height: 100px;
+font-family: 'Russo One', sans-serif;
 }
-
+.drop-down{
+  text-align:center;
+  margin:40px;
+}
+.dropdown-style{
+  color:black;
+  background: linear-gradient(to right, #24CCAA, #A2DB95);
+  border-radius: 20px;
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  line-height: 30px;
+  padding: 15px 50px;
+  font-weight: 500;
+  margin-left: 35px;
+}

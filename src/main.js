@@ -5,6 +5,7 @@ const btnLogin= document.getElementById('btnlogin');
 const contenedor = document.getElementById("contenedor");
 const pokeData = POKEMON.pokemon;
 const name = document.getElementById("name");
+const mainHeader = document.getElementById("main-header");
 
 btnLogin.addEventListener('click', () => {
     const userValue = document.getElementById('username').value;
@@ -12,6 +13,7 @@ btnLogin.addEventListener('click', () => {
     if (userValue === 'c' && passwordValue === '1') {
         loginVista.classList.add('hide');
         pokemonVista.classList.remove('hide');
+        mainHeader.classList.remove('hide');
     }
     else { 
         document.getElementById('result1').innerHTML = "Contraseña errada,intentelo nuevamente";
