@@ -2,7 +2,7 @@
 const loginVista = document.getElementById('login-box');
 const pokemonVista =document.getElementById('pokemon-vista');
 const btnLogin= document.getElementById('btnlogin');
-const contenedor = document.getElementById("contenedor");
+const contenedor = document.getElementById("pokemon-card");
 const pokeData = POKEMON.pokemon;
 const name = document.getElementById("name");
 const mainHeader = document.getElementById("main-header");
@@ -32,7 +32,7 @@ const mostrarPoker = (pokeData) => {
     }
       let llamado = `
       <div>
-         <img src ="${pokeData[i].img}"/>
+         <img class="image" src ="${pokeData[i].img}"/>
          <p>Nombre : ${pokeData[i].name}</p>
          <p>Atrapados : ${pokeData[i].multipliers}</p>
          
